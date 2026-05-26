@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="header">
+    <text class="title">牛马图鉴</text>
+    <text class="subtitle">已解锁 {{unlockedIds.length}}/16</text>
+  </view>
+
+  <view class="grid">
+    <view 
+      class="card {{item.unlocked ? 'unlocked' : 'locked'}}"
+      wx:for="{{characters}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onCharacterTap"
+    >
+      <view class="avatar-wrapper">
+        <image 
+          wx:if="{{item.unlocked}}"
+          class="avatar" 
+          src="{{item.image}}"
+          mode="aspectFill"
+        />
+        <view wx:else class="avatar-placeholder">
+          <text class="lock-text">🔒</text>
+        </view>
+      </view>
+      <view class="info">
+        <text class="name">{{item.unlocked ? item.name : '???'}}</text>
+        <text class="level">{{item.level}}级</text>
+      </view>
+    </view>
+  </view>
+</view>

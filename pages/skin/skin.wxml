@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="header">
+    <view class="header-title">你想测什么？</view>
+    <view class="header-sub">选择一个最符合你的场景</view>
+  </view>
+
+  <view class="skin-list">
+    <block wx:for="{{skins}}" wx:key="id">
+      <view class="skin-card {{item.id === selectedSkin ? 'selected' : ''}}"
+            style="--skin-color: {{item.color}}"
+            bindtap="onSelectSkin"
+            data-id="{{item.id}}">
+        <view class="skin-icon">{{item.icon}}</view>
+        <view class="skin-info">
+          <view class="skin-name">{{item.name}}</view>
+          <view class="skin-tagline">{{item.tagline}}</view>
+        </view>
+        <view class="skin-check" wx:if="{{item.id === selectedSkin}}">✓</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="action-area">
+    <button class="btn-start" bindtap="onStartTest" disabled="{{!selectedSkin}}">
+      开始测试
+    </button>
+    <view class="hint" wx:if="{{!selectedSkin}}">请先选择一个场景</view>
+  </view>
+</view>

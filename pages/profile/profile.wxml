@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="profile-header">
+    <view class="avatar">{{userAvatar}}</view>
+    <view class="user-info">
+      <view class="user-name">{{userId}}</view>
+      <view class="user-desc">共完成 {{history.length}} 次测试</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">测试历史</view>
+    
+    <view wx:if="{{!hasHistory}}" class="empty-state">
+      <text class="empty-icon">📝</text>
+      <text class="empty-text">还没有测试记录</text>
+      <navigator url="/pages/test/test" class="empty-btn">开始测试</navigator>
+    </view>
+    
+    <view wx:else class="history-list">
+      <view 
+        class="history-item" 
+        wx:for="{{history}}" 
+        wx:key="index"
+        data-index="{{index}}"
+        bindtap="onViewHistory"
+      >
+        <text class="history-icon">{{item.characterIcon}}</text>
+        <view class="history-info">
+          <text class="history-name">{{item.character.name}}</text>
+          <text class="history-time">{{item.formattedTime}}</text>
+        </view>
+        <text class="history-arrow">></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="action-list">
+      <view class="action-item" bindtap="onViewCollection">
+        <text class="action-icon">📚</text>
+        <text class="action-text">牛马图鉴</text>
+        <text class="action-arrow">></text>
+      </view>
+      <view class="action-item" bindtap="onViewCombination">
+        <text class="action-icon">🧬</text>
+        <text class="action-text">牛马组合</text>
+        <text class="action-arrow">></text>
+      </view>
+      <view class="action-item" bindtap="onClearHistory">
+        <text class="action-icon">🗑️</text>
+        <text class="action-text">清除历史</text>
+      </view>
+      <view class="action-item" bindtap="onAbout">
+        <text class="action-icon">ℹ️</text>
+        <text class="action-text">关于测试</text>
+      </view>
+    </view>
+  </view>
+
+  <view style="height: 40px;"></view>
+</view>

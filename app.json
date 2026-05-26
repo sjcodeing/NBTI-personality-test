@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/skin/skin",
+    "pages/test/test",
+    "pages/result/result",
+    "pages/ranking/ranking",
+    "pages/profile/profile",
+    "pages/collection/collection",
+    "pages/collection-detail/collection-detail",
+    "pages/combination/combination"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarTitleText": "NBTI 人格测试",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1a1a2e"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1a1a2e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/ranking/ranking",
+        "text": "排行",
+        "iconPath": "static/icons/ranking.png",
+        "selectedIconPath": "static/icons/ranking-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "static/icons/profile.png",
+        "selectedIconPath": "static/icons/profile-active.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "lazyCodeLoading": "requiredComponents",
+  "__usePrivacyCheck__": true,
+  "sitemapLocation": "sitemap.json"
+}

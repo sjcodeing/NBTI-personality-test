@@ -1,0 +1,38 @@
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <view class="header-title">牛马类型分布榜</view>
+    <view class="header-desc">基于 {{totalPeople}} 次测试数据</view>
+  </view>
+
+  <!-- List -->
+  <view class="ranking-list">
+    <view 
+      class="ranking-item" 
+      wx:for="{{rankings}}" 
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onItemTap"
+    >
+      <view class="rank-num {{item.rank <= 3 ? 'top-' + item.rank : ''}}">{{item.rank}}</view>
+      <view class="personality-info">
+        <view class="personality-header">
+          <view class="level-badge {{item.level === 'S' ? 'level-s' : item.level === 'A' ? 'level-a' : item.level === 'B' ? 'level-b' : 'level-c'}}">
+            {{item.level}}
+          </view>
+          <view class="personality-name">{{item.name}}</view>
+        </view>
+        <view class="personality-alias">{{item.alias}}</view>
+        <view class="badges-preview" wx:if="{{item.badges.length > 0}}">
+          <text wx:for="{{item.badges.slice(0, 2)}}" wx:for-item="badge" wx:key="*this">{{badge}}</text>
+        </view>
+      </view>
+      <view class="count-info">
+        <view class="count-num">{{item.count}}</view>
+        <view class="count-label">人</view>
+      </view>
+    </view>
+  </view>
+
+  <view style="height: 40px;"></view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "codegraph"
+  ],
+  "enableAllProjectMcpServers": true
+}

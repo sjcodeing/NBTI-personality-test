@@ -1,0 +1,11 @@
+﻿{
+    "mcpServers":  {
+                       "codegraph":  {
+                                         "args":  [
+                                                      "C:/Users/13495/AppData/Roaming/QClaw/npm-global/node_modules/@colbymchenry/codegraph/dist/mcp/index.js"
+                                                  ],
+                                         "command":  "node",
+                                         "cwd":  "D:/projct/miniprogram"
+                                     }
+                   }
+}

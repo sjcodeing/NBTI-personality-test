@@ -1,0 +1,172 @@
+.container {
+  padding: 20rpx;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background: white;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-size: 40rpx;
+  font-weight: bold;
+  display: block;
+}
+
+.alias {
+  font-size: 28rpx;
+  color: #666;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.level-badge {
+  display: inline-block;
+  background: #ff9800;
+  color: white;
+  padding: 5rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.stats-section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+}
+
+.stat-label {
+  width: 100rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.stat-bar {
+  flex: 1;
+  height: 20rpx;
+  background: #eee;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  border-radius: 10rpx;
+  transition: width 0.3s;
+}
+
+.stat-value {
+  width: 40rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.description, .quote, .advice, .weakness, .partner {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.quote {
+  font-style: italic;
+  color: #666;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+}
+
+.dimension-item {
+  margin-bottom: 20rpx;
+}
+
+.dimension-label {
+  font-size: 28rpx;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10rpx;
+  color: #333;
+}
+
+.dimension-value {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.danger-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.danger-item {
+  font-size: 26rpx;
+  color: #f44336;
+  padding: 10rpx;
+  background: #ffebee;
+  border-radius: 8rpx;
+}
+
+.share-btn {
+  background: #4caf50;
+  color: white;
+  margin: 30rpx;
+}

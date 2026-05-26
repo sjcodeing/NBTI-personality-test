@@ -1,0 +1,118 @@
+<view class="container" wx:if="{{character}}">
+  <!-- 角色头部 -->
+  <view class="header">
+    <image class="avatar" src="{{character.image}}" mode="aspectFill" />
+    <view class="info">
+      <text class="name">{{character.name}}</text>
+      <text class="alias">{{character.alias}}</text>
+      <view class="level-badge">{{character.level}}级</view>
+    </view>
+  </view>
+
+  <!-- 六维属性 -->
+  <view class="stats-section">
+    <text class="section-title">六维属性</text>
+    <view class="stats-grid">
+      <view class="stat-item">
+        <text class="stat-label">卷力</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{character.stats.juanLi * 20}}%"></view>
+        </view>
+        <text class="stat-value">{{character.stats.juanLi}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">社交力</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{character.stats.sheJiaoLi * 20}}%"></view>
+        </view>
+        <text class="stat-value">{{character.stats.sheJiaoLi}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">执行力</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{character.stats.zhiXingLi * 20}}%"></view>
+        </view>
+        <text class="stat-value">{{character.stats.zhiXingLi}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">创造力</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{character.stats.chuangZaoLi * 20}}%"></view>
+        </view>
+        <text class="stat-value">{{character.stats.chuangZaoLi}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">抗压</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{character.stats.kangYa * 20}}%"></view>
+        </view>
+        <text class="stat-value">{{character.stats.kangYa}}</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">幸福感</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{character.stats.xingFuGan * 20}}%"></view>
+        </view>
+        <text class="stat-value">{{character.stats.xingFuGan}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 角色描述 -->
+  <view class="section">
+    <text class="section-title">角色描述</text>
+    <text class="description">{{character.description}}</text>
+  </view>
+
+  <!-- 口头禅 -->
+  <view class="section">
+    <text class="section-title">口头禅</text>
+    <text class="quote">"{{character.quote}}"</text>
+  </view>
+
+  <!-- 徽章 -->
+  <view class="section">
+    <text class="section-title">徽章</text>
+    <view class="badges">
+      <text class="badge" wx:for="{{character.badges}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 维度分析 -->
+  <view class="section">
+    <text class="section-title">维度分析</text>
+    <view class="dimension-item" wx:for="{{character.dimensionAnalysis}}" wx:key="index" wx:for-item="value" wx:for-index="key">
+      <text class="dimension-label">{{key === 'energy' ? '能量来源' : key === 'style' ? '做事风格' : key === 'attitude' ? '工作态度' : '表达风格'}}</text>
+      <text class="dimension-value">{{value}}</text>
+    </view>
+  </view>
+
+  <!-- 职业建议 -->
+  <view class="section">
+    <text class="section-title">职业建议</text>
+    <text class="advice">{{character.careerAdvice}}</text>
+  </view>
+
+  <!-- 弱点 -->
+  <view class="section">
+    <text class="section-title">弱点</text>
+    <text class="weakness">{{character.weakness}}</text>
+  </view>
+
+  <!-- 最佳搭档 -->
+  <view class="section">
+    <text class="section-title">最佳搭档</text>
+    <text class="partner">{{character.bestPartner}}</text>
+  </view>
+
+  <!-- 危险场景 -->
+  <view class="section">
+    <text class="section-title">危险场景</text>
+    <view class="danger-zones">
+      <text class="danger-item" wx:for="{{character.dangerZones}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 分享按钮 -->
+  <button class="share-btn" open-type="share">分享给好友</button>
+</view>

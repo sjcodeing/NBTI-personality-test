@@ -1,0 +1,409 @@
+/* 结果页面样式 */
+.result-card {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+/* 圆形头像 + 光晕 */
+.avatar-wrapper {
+  position: relative;
+  width: 320rpx;
+  height: 320rpx;
+  margin: 0 auto 20rpx;
+}
+
+.avatar-glow {
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+  right: -20rpx;
+  bottom: -20rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  filter: blur(20rpx);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.avatar-image {
+  width: 280rpx;
+  height: 280rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border: 6rpx solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.level-s {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #1a1a2e;
+  box-shadow: 0 4rpx 20rpx rgba(255, 215, 0, 0.4);
+}
+
+.level-a {
+  background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
+  color: #1a1a2e;
+  box-shadow: 0 4rpx 20rpx rgba(192, 192, 192, 0.4);
+}
+
+.level-b {
+  background: linear-gradient(135deg, #cd7f32, #b87333);
+  color: #fff;
+  box-shadow: 0 4rpx 20rpx rgba(205, 127, 50, 0.4);
+}
+
+.level-c {
+  background: linear-gradient(135deg, #666, #444);
+  color: #fff;
+}
+
+.character-name {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.character-alias {
+  font-size: 28rpx;
+  opacity: 0.8;
+  margin-bottom: 30rpx;
+}
+
+.character-desc {
+  font-size: 28rpx;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 30rpx;
+  text-align: left;
+}
+
+.quote-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  border-left: 6rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.quote-text {
+  font-size: 28rpx;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+.traits-section,
+.badges-section {
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.traits-list,
+.badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.trait-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12rpx 24rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+.badge-item {
+  background: rgba(255, 215, 0, 0.2);
+  border: 2rpx solid rgba(255, 215, 0, 0.4);
+  padding: 12rpx 24rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+/* 维度分析 */
+.dimension-section {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.dimension-section .section-title {
+  color: #1a1a2e;
+  text-align: center;
+}
+
+.radar-container {
+  width: 100%;
+  height: 400rpx;
+  margin-bottom: 30rpx;
+}
+
+.radar-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.dimension-list {
+  margin-top: 20rpx;
+}
+
+.dimension-item {
+  margin-bottom: 30rpx;
+}
+
+.dimension-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.dimension-left,
+.dimension-right {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.dimension-left.dominant {
+  color: #1a1a2e;
+  font-weight: bold;
+}
+
+.dimension-right.dominant {
+  color: #1a1a2e;
+  font-weight: bold;
+}
+
+.dimension-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.dimension-bar {
+  height: 16rpx;
+  background: #e0e0e0;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.dimension-fill {
+  height: 100%;
+  border-radius: 8rpx;
+  transition: width 0.5s ease;
+}
+
+.dimension-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+  color: #999;
+}
+
+.dominant-text {
+  color: #1a1a2e;
+  font-weight: bold;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 30rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.btn-primary::after {
+  border: none;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #1a1a2e;
+  border: 2rpx solid #1a1a2e;
+  border-radius: 50rpx;
+  padding: 30rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.btn-secondary::after {
+  border: none;
+}
+
+/* 无结果 */
+.no-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 40rpx;
+  text-align: center;
+}
+
+/* 分享解锁区域 */
+.share-lock-section {
+  background: linear-gradient(135deg, #fff5e6 0%, #fff 100%);
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  border: 2rpx dashed #ffa500;
+}
+
+.lock-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.lock-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 16rpx;
+}
+
+.lock-desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30rpx;
+}
+
+.btn-unlock {
+  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 30rpx 60rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.btn-unlock::after {
+  border: none;
+}
+
+.lock-hint {
+  font-size: 22rpx;
+  color: #999;
+}
+
+/* 深度分析 */
+.deep-analysis-section {
+  margin-bottom: 30rpx;
+}
+
+.analysis-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.analysis-card.danger {
+  background: #fff5f5;
+  border: 2rpx solid #ffcccc;
+}
+
+.analysis-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.analysis-item {
+  margin-bottom: 24rpx;
+}
+
+.analysis-item:last-child {
+  margin-bottom: 0;
+}
+
+.analysis-label {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  font-weight: 500;
+}
+
+.analysis-text {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.danger-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.danger-item {
+  font-size: 28rpx;
+  color: #cc0000;
+  line-height: 1.5;
+}
+
+/* 免责声明 */
+.disclaimer {
+  padding: 20rpx 40rpx;
+  margin: 20rpx 40rpx;
+  background: #f8f8f8;
+  border-radius: 12rpx;
+}
+
+.disclaimer-text {
+  font-size: 22rpx;
+  color: #999;
+  line-height: 1.5;
+}
+
+/* 无结果 */
+.no-result text {
+  font-size: 32rpx;
+  color: #999;
+  margin-bottom: 40rpx;
+}

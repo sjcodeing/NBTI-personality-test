@@ -1,0 +1,1116 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "miniprogram",
+    "languages": [
+      "javascript",
+      "wxml",
+      "wxss",
+      "json"
+    ],
+    "frameworks": [
+      "wechat-miniprogram"
+    ],
+    "description": "微信小程序 - 性格测试类应用",
+    "analyzedAt": "2026-05-26T11:17:00.785651+08:00",
+    "gitCommitHash": "41a5ded6cbaf01f786068c25be5f46304b6dfad8"
+  },
+  "nodes": [
+    {
+      "id": "file:.gitignore",
+      "type": "file",
+      "name": ".gitignore",
+      "filePath": ".gitignore",
+      "summary": "# 依赖 node_modules/  # 构建产物 miniprogram_npm/ pack_npm/  # IDE .project.config.json .project.private.config.json .settings/ *.xcworkspace  # 日志 *.log np",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.mcp.json",
+      "type": "config",
+      "name": ".mcp.json",
+      "filePath": ".mcp.json",
+      "summary": "{   \"mcpServers\": {     \"codegraph\": {       \"type\": \"stdio\",       \"command\": \"node\",       \"args\": [         \"C:/Users/13495/AppData/Roaming/QClaw/n",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app.js",
+      "type": "file",
+      "name": "app.js",
+      "filePath": "app.js",
+      "summary": "App({   globalData: {     userInfo: null,     history: [],   },   onLaunch() {     this.loadHistory();   },   loadHistory() {     try {       const hi",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app.json",
+      "type": "config",
+      "name": "app.json",
+      "filePath": "app.json",
+      "summary": "{   \"pages\": [     \"pages/index/index\",     \"pages/skin/skin\",     \"pages/test/test\",     \"pages/result/result\",     \"pages/ranking/ranking\",     \"pag",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app.wxss",
+      "type": "config",
+      "name": "app.wxss",
+      "filePath": "app.wxss",
+      "summary": "/* Global Styles */ page {   background-color: #f5f5f5;   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:campus_avatars.json",
+      "type": "config",
+      "name": "campus_avatars.json",
+      "filePath": "campus_avatars.json",
+      "summary": "{   \"MPJF\": \"data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyMDAgMjAwJz4KICA8ZGVmcz4KICAgIDxyYWRpYWx",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:love_avatars.json",
+      "type": "config",
+      "name": "love_avatars.json",
+      "filePath": "love_avatars.json",
+      "summary": "{   \"MPJF\": \"data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyMDAgMjAwJz4KICA8ZGVmcz4KICAgIDxyYWRpYWx",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:privacy.md",
+      "type": "document",
+      "name": "privacy.md",
+      "filePath": "privacy.md",
+      "summary": "# NBTI牛马测试 隐私保护指引  ## 引言 NBTI牛马测试（以下简称\"我们\"）非常重视用户隐私。本隐私保护指引说明我们如何收集、使用和保护您的个人信息。  ## 信息收集 - **测试结果数据**：您完成的测试答案和结果仅存储在您的设备本地（微信本地存储），不会上传至任何服务器。 - **不",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:project.config.json",
+      "type": "config",
+      "name": "project.config.json",
+      "filePath": "project.config.json",
+      "summary": "{\"setting\": {\"es6\": true, \"postcss\": true, \"minified\": true, \"uglifyFileName\": false, \"enhance\": true, \"packNpmRelationList\": [], \"babelSetting\": {\"ig",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:sitemap.json",
+      "type": "config",
+      "name": "sitemap.json",
+      "filePath": "sitemap.json",
+      "summary": "{\"desc\": \"关于本文件的更多信息，请参考文档 https://developers.weixin.qq.com/miniprogram/dev/framework/sitemap.html\", \"rules\": [{\"action\": \"allow\", \"page\": \"*\"}]}",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.claude/settings.json",
+      "type": "config",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "﻿{     \"mcpServers\":  {                        \"codegraph\":  {                                          \"args\":  [",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.claude/settings.local.json",
+      "type": "config",
+      "name": "settings.local.json",
+      "filePath": ".claude/settings.local.json",
+      "summary": "{   \"enabledMcpjsonServers\": [     \"codegraph\"   ],   \"enableAllProjectMcpServers\": true }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.codegraph/.gitignore",
+      "type": "file",
+      "name": ".gitignore",
+      "filePath": ".codegraph/.gitignore",
+      "summary": "# CodeGraph data files # These are local to each machine and should not be committed  # Database *.db *.db-wal *.db-shm  # Cache cache/  # Logs *.log",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.codegraph/codegraph.db",
+      "type": "file",
+      "name": "codegraph.db",
+      "filePath": ".codegraph/codegraph.db",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.codegraph/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".codegraph/config.json",
+      "summary": "{   \"version\": 1,   \"include\": [     \"**/*.ts\",     \"**/*.tsx\",     \"**/*.js\",     \"**/*.jsx\",     \"**/*.py\",     \"**/*.go\",     \"**/*.rs\",     \"**/*.",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:data/characters.js",
+      "type": "file",
+      "name": "characters.js",
+      "filePath": "data/characters.js",
+      "summary": "// NBTI 牛马人格角色 - 16种类型 // 四维度：能量(M/D)、做事(P/R)、态度(J/T)、表达(F/L)  const CHARACTERS = [   {     id: 'MPJF',     name: '卷王之王',     alias: '天生的领导者，团队的永动机',",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/combinations.js",
+      "type": "file",
+      "name": "combinations.js",
+      "filePath": "data/combinations.js",
+      "summary": "/**  * NBTI 牛马组合系统 - 智能动态生成版  * 根据两个角色的维度属性自动生成幽默描述+多维度分析  */  // 经典组合定义（手动优化，优先级最高） const CLASSIC_COMBINATIONS = {   'MPJF-MPJF': {     name: '对抗路牛马'",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/questions.js",
+      "type": "file",
+      "name": "questions.js",
+      "filePath": "data/questions.js",
+      "summary": "// NBTI 牛马人格测试 - 30题 // 四维度：能量(M/D)、做事(P/R)、态度(J/T)、表达(F/L)  const QUESTIONS = [   {     id: 1,     dimension: 'energy',     text: '周一早上9点，你还没坐稳，领导突然拉",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/skins.js",
+      "type": "file",
+      "name": "skins.js",
+      "filePath": "data/skins.js",
+      "summary": "/**  * NBTI 多皮肤配置  * 一套框架，三套皮肤：职场/校园/恋爱  */  const SKINS = [   {     id: 'workplace',     name: '职场版',     icon: '🏢',     tagline: '测测你的职场人格，是卷王还是躺平大师",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:data/characters/campus.js",
+      "type": "file",
+      "name": "campus.js",
+      "filePath": "data/characters/campus.js",
+      "summary": "// NBTI 校园人格角色 - 16种类型 // 四维度：能量(M/D外向/内向)、做事(P/R计划/随性)、态度(J/T卷/佛)、表达(F/L表现/内敛)  const CHARACTERS = [   {     id: 'MPJF',     name: '卷王学霸',     alias:",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/characters/campus.js.bak",
+      "type": "file",
+      "name": "campus.js.bak",
+      "filePath": "data/characters/campus.js.bak",
+      "summary": "// NBTI 校园人格角色 - 16种类型 // 四维度：能量(M/D外向/内向)、做事(P/R计划/随性)、态度(J/T卷/佛)、表达(F/L表现/内敛)  const CHARACTERS = [   {     id: 'MPJF',     name: '卷王学霸',     alias:",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/characters/love.js",
+      "type": "file",
+      "name": "love.js",
+      "filePath": "data/characters/love.js",
+      "summary": "// NBTI 恋爱人格角色 - 16种类型 // 四维度：能量(M/D社牛/社恐)、做事(P/R计划/随性)、态度(J/T认真/佛系)、表达(F/L外放/内敛)  const CHARACTERS = [   {     id: 'MPJF',     name: '霸总型恋人',     ali",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/characters/love.js.bak",
+      "type": "file",
+      "name": "love.js.bak",
+      "filePath": "data/characters/love.js.bak",
+      "summary": "// NBTI 恋爱人格角色 - 16种类型 // 四维度：能量(M/D社牛/社恐)、做事(P/R计划/随性)、态度(J/T认真/佛系)、表达(F/L外放/内敛)  const CHARACTERS = [   {     id: 'MPJF',     name: '霸总型恋人',     ali",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/characters/workplace.js",
+      "type": "file",
+      "name": "workplace.js",
+      "filePath": "data/characters/workplace.js",
+      "summary": "// NBTI 职场人格角色 - 16种类型 // 四维度：能量(M/D外向/内向)、做事(P/R计划/随性)、态度(J/T严谨/佛系)、表达(F/L外放/内敛)  const CHARACTERS = [   {     id: 'MPJF',     name: '卷王之王',     alia",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/characters/workplace.js.bak",
+      "type": "file",
+      "name": "workplace.js.bak",
+      "filePath": "data/characters/workplace.js.bak",
+      "summary": "// NBTI 职场人格角色 - 16种类型 // 四维度：能量(M/D外向/内向)、做事(P/R计划/随性)、态度(J/T严谨/佛系)、表达(F/L外放/内敛)  const CHARACTERS = [   {     id: 'MPJF',     name: '卷王之王',     alia",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/questions/campus.js",
+      "type": "file",
+      "name": "campus.js",
+      "filePath": "data/questions/campus.js",
+      "summary": "// NBTI 校园人格测试 - 34题（精简幽默版） // 四维度：M/D 社牛/社恐、P/R 计划/随性、J/T 认真/佛系、F/L 外放/内敛  const QUESTIONS = [   // ===== M（社牛）4题 =====   { id: 1, dimension: 'energy",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:data/questions/love.js",
+      "type": "file",
+      "name": "love.js",
+      "filePath": "data/questions/love.js",
+      "summary": "// NBTI 恋爱人格测试 - 34题（平衡版） // 四维度：M/D 社牛/社恐、P/R 计划/随性、J/T 认真/佛系、F/L 外放/内敛  const QUESTIONS = [   // ========== M（社牛/外倾）4题 ==========   {     id: 1, dim",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:data/questions/workplace.js",
+      "type": "file",
+      "name": "workplace.js",
+      "filePath": "data/questions/workplace.js",
+      "summary": "// NBTI 职场人格测试 - 34题（精简幽默版） // 四维度：M/D 社牛/社恐、P/R 计划/随性、J/T 认真/佛系、F/L 外放/内敛  const QUESTIONS = [   // ===== M（社牛）4题 =====   { id: 1, dimension: 'energy",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/collection/collection.js",
+      "type": "file",
+      "name": "collection.js",
+      "filePath": "pages/collection/collection.js",
+      "summary": "const { CHARACTERS } = require('../../data/characters');  Page({   data: {     characters: [],     unlockedIds: []   },    onLoad() {     this.loadCha",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/collection/collection.json",
+      "type": "config",
+      "name": "collection.json",
+      "filePath": "pages/collection/collection.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"牛马图鉴\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/collection/collection.wxml",
+      "type": "document",
+      "name": "collection.wxml",
+      "filePath": "pages/collection/collection.wxml",
+      "summary": "<view class=\"container\">   <view class=\"header\">     <text class=\"title\">牛马图鉴</text>     <text class=\"subtitle\">已解锁 {{unlockedIds.length}}/16</text>",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/collection/collection.wxss",
+      "type": "config",
+      "name": "collection.wxss",
+      "filePath": "pages/collection/collection.wxss",
+      "summary": ".container {   padding: 20rpx;   background: #f5f5f5;   min-height: 100vh; }  .header {   text-align: center;   padding: 30rpx 0; }  .title {   font-s",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/collection-detail/collection-detail.js",
+      "type": "file",
+      "name": "collection-detail.js",
+      "filePath": "pages/collection-detail/collection-detail.js",
+      "summary": "const { CHARACTERS } = require('../../data/characters');  Page({   data: {     character: null   },    onLoad(options) {     const { id } = options;",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/collection-detail/collection-detail.json",
+      "type": "config",
+      "name": "collection-detail.json",
+      "filePath": "pages/collection-detail/collection-detail.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"角色详情\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/collection-detail/collection-detail.wxml",
+      "type": "document",
+      "name": "collection-detail.wxml",
+      "filePath": "pages/collection-detail/collection-detail.wxml",
+      "summary": "<view class=\"container\" wx:if=\"{{character}}\">   <!-- 角色头部 -->   <view class=\"header\">     <image class=\"avatar\" src=\"{{character.image}}\" mode=\"aspec",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/collection-detail/collection-detail.wxss",
+      "type": "config",
+      "name": "collection-detail.wxss",
+      "filePath": "pages/collection-detail/collection-detail.wxss",
+      "summary": ".container {   padding: 20rpx;   background: #f5f5f5;   min-height: 100vh; }  .header {   display: flex;   align-items: center;   padding: 30rpx;   ba",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/combination/combination.js",
+      "type": "file",
+      "name": "combination.js",
+      "filePath": "pages/combination/combination.js",
+      "summary": "const { getAvailableTypes, generateCombination } = require('../../data/combinations'); const { CHARACTERS } = require('../../data/characters');  Page(",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/combination/combination.json",
+      "type": "config",
+      "name": "combination.json",
+      "filePath": "pages/combination/combination.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"牛马组合\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/combination/combination.wxml",
+      "type": "document",
+      "name": "combination.wxml",
+      "filePath": "pages/combination/combination.wxml",
+      "summary": "<view class=\"container\">   <!-- 未显示结果时：选择界面 -->   <view wx:if=\"{{!showResult}}\">     <!-- 我的信息 -->     <view class=\"my-section\">       <view class=\"se",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/combination/combination.wxss",
+      "type": "config",
+      "name": "combination.wxss",
+      "filePath": "pages/combination/combination.wxss",
+      "summary": ".container {   padding: 24rpx;   background: #f5f5f5;   min-height: 100vh; }  /* 我的类型区域 */ .my-section {   background: white;   border-radius: 20rpx;",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pages/index/index.js",
+      "type": "file",
+      "name": "index.js",
+      "filePath": "pages/index/index.js",
+      "summary": "const app = getApp();  Page({   data: {     totalTests: 8888,     hasHistory: false,     latestResult: null   },    onLoad() {     this.loadHistory();",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/index/index.json",
+      "type": "config",
+      "name": "index.json",
+      "filePath": "pages/index/index.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"NBTI 牛马测试\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/index/index.wxml",
+      "type": "document",
+      "name": "index.wxml",
+      "filePath": "pages/index/index.wxml",
+      "summary": "<view class=\"page\">   <!-- 顶部 Header -->   <view class=\"header\">     <view class=\"header-content\">       <view class=\"header-icon\">🐮</view>       <vie",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/index/index.wxss",
+      "type": "config",
+      "name": "index.wxss",
+      "filePath": "pages/index/index.wxss",
+      "summary": "/* ===== 页面基础 ===== */ page {   background-color: #f5f6fa; }  .page {   min-height: 100vh; }  /* ===== 顶部 Header（深色渐变）===== */ .header {   background:",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/profile/profile.js",
+      "type": "file",
+      "name": "profile.js",
+      "filePath": "pages/profile/profile.js",
+      "summary": "const app = getApp();  // 有趣的随机ID生成器 const FUNNY_PREFIXES = ['爱吃', '喜欢', '沉迷', '热爱', '追逐', '守护', '寻找', '迷失']; const FUNNY_FOODS = ['紫菜包子', '草莓蛋糕', '抹茶",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/profile/profile.json",
+      "type": "config",
+      "name": "profile.json",
+      "filePath": "pages/profile/profile.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"我的\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/profile/profile.wxml",
+      "type": "document",
+      "name": "profile.wxml",
+      "filePath": "pages/profile/profile.wxml",
+      "summary": "<view class=\"container\">   <view class=\"profile-header\">     <view class=\"avatar\">{{userAvatar}}</view>     <view class=\"user-info\">       <view class",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/profile/profile.wxss",
+      "type": "config",
+      "name": "profile.wxss",
+      "filePath": "pages/profile/profile.wxss",
+      "summary": ".profile-header {   display: flex;   align-items: center;   gap: 32rpx;   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);   border-radi",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/ranking/ranking.js",
+      "type": "file",
+      "name": "ranking.js",
+      "filePath": "pages/ranking/ranking.js",
+      "summary": "const { CHARACTERS } = require('../../data/characters');  Page({   data: {     rankings: [],     totalPeople: 12847   },    onLoad() {     this.genera",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/ranking/ranking.json",
+      "type": "config",
+      "name": "ranking.json",
+      "filePath": "pages/ranking/ranking.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"牛马排行榜\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/ranking/ranking.wxml",
+      "type": "document",
+      "name": "ranking.wxml",
+      "filePath": "pages/ranking/ranking.wxml",
+      "summary": "<view class=\"container\">   <!-- Header -->   <view class=\"header\">     <view class=\"header-title\">牛马类型分布榜</view>     <view class=\"header-desc\">基于 {{to",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/ranking/ranking.wxss",
+      "type": "config",
+      "name": "ranking.wxss",
+      "filePath": "pages/ranking/ranking.wxss",
+      "summary": ".header {   text-align: center;   padding: 24px 20px;   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);   margin: -16px -16px 0 -16px;",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/result/result.js",
+      "type": "file",
+      "name": "result.js",
+      "filePath": "pages/result/result.js",
+      "summary": "const app = getApp(); const quizEngine = require('../../utils/quiz-engine');  Page({   data: {     result: null,     dimensionScores: [],     radarDat",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pages/result/result.json",
+      "type": "config",
+      "name": "result.json",
+      "filePath": "pages/result/result.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"牛马测试结果\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/result/result.wxml",
+      "type": "document",
+      "name": "result.wxml",
+      "filePath": "pages/result/result.wxml",
+      "summary": "<view class=\"container\" wx:if=\"{{result}}\">   <!-- 结果卡片 -->   <view id=\"resultCard\" class=\"result-card\">     <!-- 角色头像 -->     <view class=\"avatar-wra",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/result/result.wxss",
+      "type": "config",
+      "name": "result.wxss",
+      "filePath": "pages/result/result.wxss",
+      "summary": "/* 结果页面样式 */ .result-card {   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);   border-radius: 20rpx;   padding: 40rpx;   margin-bottom",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pages/skin/skin.js",
+      "type": "file",
+      "name": "skin.js",
+      "filePath": "pages/skin/skin.js",
+      "summary": "const { getAllSkins, getDefaultSkin } = require('../../data/skins');  Page({   data: {     skins: [],     selectedSkin: null   },    onLoad() {     co",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/skin/skin.json",
+      "type": "config",
+      "name": "skin.json",
+      "filePath": "pages/skin/skin.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"选择测试场景\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/skin/skin.wxml",
+      "type": "document",
+      "name": "skin.wxml",
+      "filePath": "pages/skin/skin.wxml",
+      "summary": "<view class=\"page\">   <view class=\"header\">     <view class=\"header-title\">你想测什么？</view>     <view class=\"header-sub\">选择一个最符合你的场景</view>   </view>",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/skin/skin.wxss",
+      "type": "config",
+      "name": "skin.wxss",
+      "filePath": "pages/skin/skin.wxss",
+      "summary": ".page {   min-height: 100vh;   background: #f5f5f5;   padding: 20px 16px; }  .header {   text-align: center;   margin-bottom: 32px; }  .header-title {",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:pages/test/test.js",
+      "type": "file",
+      "name": "test.js",
+      "filePath": "pages/test/test.js",
+      "summary": "const quizEngine = require('../../utils/quiz-engine'); const app = getApp();  Page({   data: {     questions: [],     currentIndex: 0,     answers: {}",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/test/test.json",
+      "type": "config",
+      "name": "test.json",
+      "filePath": "pages/test/test.json",
+      "summary": "{   \"usingComponents\": {},   \"navigationBarTitleText\": \"测试中\" }",
+      "tags": [
+        "json",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:pages/test/test.wxml",
+      "type": "document",
+      "name": "test.wxml",
+      "filePath": "pages/test/test.wxml",
+      "summary": "<view class=\"container\">   <!-- Progress Bar -->   <view class=\"progress-bar\">     <view class=\"progress-fill\" style=\"width: {{progress}}%\"></view>",
+      "tags": [
+        "wxml",
+        "markup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pages/test/test.wxss",
+      "type": "config",
+      "name": "test.wxss",
+      "filePath": "pages/test/test.wxss",
+      "summary": ".progress-bar {   position: relative;   height: 8px;   background: #e0e0e0;   border-radius: 4px;   margin: 16px;   overflow: hidden; }  .progress-fil",
+      "tags": [
+        "wxss",
+        "style"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/home-active.png",
+      "type": "file",
+      "name": "home-active.png",
+      "filePath": "static/icons/home-active.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/home.png",
+      "type": "file",
+      "name": "home.png",
+      "filePath": "static/icons/home.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/profile-active.png",
+      "type": "file",
+      "name": "profile-active.png",
+      "filePath": "static/icons/profile-active.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/profile.png",
+      "type": "file",
+      "name": "profile.png",
+      "filePath": "static/icons/profile.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/ranking-active.png",
+      "type": "file",
+      "name": "ranking-active.png",
+      "filePath": "static/icons/ranking-active.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/ranking.png",
+      "type": "file",
+      "name": "ranking.png",
+      "filePath": "static/icons/ranking.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/test-active.png",
+      "type": "file",
+      "name": "test-active.png",
+      "filePath": "static/icons/test-active.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:static/icons/test.png",
+      "type": "file",
+      "name": "test.png",
+      "filePath": "static/icons/test.png",
+      "summary": "unknown file",
+      "tags": [
+        "unknown",
+        "other"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/quiz-engine.js",
+      "type": "file",
+      "name": "quiz-engine.js",
+      "filePath": "utils/quiz-engine.js",
+      "summary": "// NBTI 人格测试引擎 - 多皮肤支持  // 皮肤映射（懒加载，按需导入） const SKIN_QUESTIONS = {   workplace: require('../data/questions/workplace'),   campus: require('../data/que",
+      "tags": [
+        "javascript",
+        "code"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:pages/collection/collection.js",
+      "target": "file:data/characters.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/collection-detail/collection-detail.js",
+      "target": "file:data/characters.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/combination/combination.js",
+      "target": "file:data/combinations.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/combination/combination.js",
+      "target": "file:data/characters.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/ranking/ranking.js",
+      "target": "file:data/characters.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/result/result.js",
+      "target": "file:utils/quiz-engine.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/skin/skin.js",
+      "target": "file:data/skins.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pages/test/test.js",
+      "target": "file:utils/quiz-engine.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:utils/quiz-engine.js",
+      "target": "file:data/questions/workplace.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:utils/quiz-engine.js",
+      "target": "file:data/questions/campus.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:utils/quiz-engine.js",
+      "target": "file:data/questions/love.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:utils/quiz-engine.js",
+      "target": "file:data/characters/workplace.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:utils/quiz-engine.js",
+      "target": "file:data/characters/campus.js",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:utils/quiz-engine.js",
+      "target": "file:data/characters/love.js",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:pages",
+      "name": "Pages",
+      "description": "小程序页面",
+      "nodeIds": [
+        "file:pages/collection/collection.js",
+        "config:pages/collection/collection.json",
+        "document:pages/collection/collection.wxml",
+        "config:pages/collection/collection.wxss",
+        "file:pages/collection-detail/collection-detail.js",
+        "config:pages/collection-detail/collection-detail.json",
+        "document:pages/collection-detail/collection-detail.wxml",
+        "config:pages/collection-detail/collection-detail.wxss",
+        "file:pages/combination/combination.js",
+        "config:pages/combination/combination.json",
+        "document:pages/combination/combination.wxml",
+        "config:pages/combination/combination.wxss",
+        "file:pages/index/index.js",
+        "config:pages/index/index.json",
+        "document:pages/index/index.wxml",
+        "config:pages/index/index.wxss",
+        "file:pages/profile/profile.js",
+        "config:pages/profile/profile.json",
+        "document:pages/profile/profile.wxml",
+        "config:pages/profile/profile.wxss",
+        "file:pages/ranking/ranking.js",
+        "config:pages/ranking/ranking.json",
+        "document:pages/ranking/ranking.wxml",
+        "config:pages/ranking/ranking.wxss",
+        "file:pages/result/result.js",
+        "config:pages/result/result.json",
+        "document:pages/result/result.wxml",
+        "config:pages/result/result.wxss",
+        "file:pages/skin/skin.js",
+        "config:pages/skin/skin.json",
+        "document:pages/skin/skin.wxml",
+        "config:pages/skin/skin.wxss",
+        "file:pages/test/test.js",
+        "config:pages/test/test.json",
+        "document:pages/test/test.wxml",
+        "config:pages/test/test.wxss"
+      ]
+    },
+    {
+      "id": "layer:utils",
+      "name": "Utils",
+      "description": "工具函数",
+      "nodeIds": [
+        "file:utils/quiz-engine.js"
+      ]
+    },
+    {
+      "id": "layer:data",
+      "name": "Data",
+      "description": "数据文件",
+      "nodeIds": [
+        "file:data/characters.js",
+        "file:data/combinations.js",
+        "file:data/questions.js",
+        "file:data/skins.js",
+        "file:data/characters/campus.js",
+        "file:data/characters/campus.js.bak",
+        "file:data/characters/love.js",
+        "file:data/characters/love.js.bak",
+        "file:data/characters/workplace.js",
+        "file:data/characters/workplace.js.bak",
+        "file:data/questions/campus.js",
+        "file:data/questions/love.js",
+        "file:data/questions/workplace.js"
+      ]
+    },
+    {
+      "id": "layer:root",
+      "name": "Root",
+      "description": "根目录配置",
+      "nodeIds": [
+        "file:.gitignore",
+        "config:.mcp.json",
+        "file:app.js",
+        "config:app.json",
+        "config:app.wxss",
+        "config:campus_avatars.json",
+        "config:love_avatars.json",
+        "document:privacy.md",
+        "config:project.config.json",
+        "config:sitemap.json"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "项目概览",
+      "description": "微信小程序入口和全局配置",
+      "nodeIds": [
+        "file:.gitignore",
+        "config:.mcp.json",
+        "file:app.js",
+        "config:app.json",
+        "config:app.wxss"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "页面模块",
+      "description": "小程序各功能页面",
+      "nodeIds": [
+        "file:pages/collection/collection.js",
+        "config:pages/collection/collection.json",
+        "document:pages/collection/collection.wxml",
+        "config:pages/collection/collection.wxss",
+        "file:pages/collection-detail/collection-detail.js",
+        "config:pages/collection-detail/collection-detail.json",
+        "document:pages/collection-detail/collection-detail.wxml",
+        "config:pages/collection-detail/collection-detail.wxss",
+        "file:pages/combination/combination.js",
+        "config:pages/combination/combination.json"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "工具与数据",
+      "description": "工具函数和数据定义",
+      "nodeIds": [
+        "file:utils/quiz-engine.js",
+        "file:data/characters.js",
+        "file:data/combinations.js",
+        "file:data/questions.js",
+        "file:data/skins.js",
+        "file:data/characters/campus.js"
+      ]
+    }
+  ]
+}

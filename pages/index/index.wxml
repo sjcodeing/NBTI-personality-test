@@ -1,0 +1,86 @@
+<view class="page">
+  <!-- 顶部 Header -->
+  <view class="header">
+    <view class="header-content">
+      <view class="header-icon">🐮</view>
+      <view class="header-title">NBTI 牛马人格测试</view>
+      <view class="header-subtitle">35道题，测出你的职场人格</view>
+    </view>
+  </view>
+
+  <!-- 主体内容区 -->
+  <view class="body">
+
+    <!-- 开始测试卡片 -->
+    <view class="card card-primary" bindtap="onStartTest">
+      <view class="card-left">
+        <view class="card-icon">🎯</view>
+        <view class="card-text-group">
+          <view class="card-title">开始测试</view>
+          <view class="card-desc">基于真实职场场景，分析你是卷王还是躺平</view>
+        </view>
+      </view>
+      <view class="card-arrow">›</view>
+    </view>
+
+    <!-- 最近测试结果卡片 -->
+    <view wx:if="{{hasHistory && latestResult}}" class="card" bindtap="onViewResult">
+      <view class="card-left">
+        <view class="result-badge {{latestResult.character.level === 'S' ? 'badge-s' : latestResult.character.level === 'A' ? 'badge-a' : latestResult.character.level === 'B' ? 'badge-b' : 'badge-c'}}">
+          {{latestResult.character.level}}
+        </view>
+        <view class="card-text-group">
+          <view class="card-title">{{latestResult.character.name}}</view>
+          <view class="card-desc">{{latestResult.character.alias}} · {{latestResult.character.quote}}</view>
+        </view>
+      </view>
+      <view class="card-arrow">›</view>
+    </view>
+
+    <!-- 未测试时的提示卡片 -->
+    <view wx:if="{{!hasHistory}}" class="card card-empty">
+      <view class="card-left">
+        <view class="card-icon">📋</view>
+        <view class="card-text-group">
+          <view class="card-title">暂无测试记录</view>
+          <view class="card-desc">点击上方卡片开始你的第一次测试</view>
+        </view>
+      </view>
+    </view>
+
+  <!-- 牛马组合卡片 -->
+  <view class="card card-collection" bindtap="onViewCombination">
+    <view class="card-left">
+      <view class="card-icon">🤝</view>
+      <view class="card-text-group">
+        <view class="card-title">牛马组合</view>
+        <view class="card-desc">选择同事类型，测测你们的职场化学反应</view>
+      </view>
+    </view>
+    <view class="card-arrow">›</view>
+  </view>
+
+  <!-- 统计数据卡片 -->
+  <view class="card card-stats">
+    <view class="stats-row">
+      <view class="stat-item">
+        <view class="stat-num">{{totalTests}}</view>
+        <view class="stat-label">人已测试</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-num">16</view>
+        <view class="stat-label">种职场人格</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-num">35</view>
+        <view class="stat-label">道测试题目</view>
+      </view>
+    </view>
+  </view>
+
+  </view>
+
+  <view style="height: 40px;"></view>
+</view>

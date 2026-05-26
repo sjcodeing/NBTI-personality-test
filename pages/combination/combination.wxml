@@ -1,0 +1,151 @@
+<view class="container">
+  <!-- 未显示结果时：选择界面 -->
+  <view wx:if="{{!showResult}}">
+    <!-- 我的信息 -->
+    <view class="my-section">
+      <view class="section-label">
+        <text class="label-icon">😎</text>
+        <text class="label-text">我的牛马类型</text>
+      </view>
+
+      <!-- 已测试过，自动显示 -->
+      <view wx:if="{{hasTested && myCharacter}}" class="my-card">
+        <view class="my-badge">{{myType}}</view>
+        <view class="my-info">
+          <text class="my-name">{{myCharacter.name}}</text>
+          <text class="my-desc">{{myCharacter.alias || ''}}</text>
+        </view>
+        <text class="my-check">✓ 已识别</text>
+      </view>
+
+      <!-- 没测试过，手动选择 -->
+      <view wx:else>
+        <text class="hint-text">你还没测试过，请先选择你的类型：</text>
+        <view class="type-grid-small">
+          <view 
+            class="type-chip {{myType === item.id ? 'selected' : ''}}"
+            wx:for="{{characters}}"
+            wx:key="id"
+            data-id="{{item.id}}"
+            bindtap="onSelectMyType"
+          >
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 分隔线 + 号 -->
+    <view class="divider">
+      <view class="divider-line"></view>
+      <text class="divider-plus">×</text>
+      <view class="divider-line"></view>
+    </view>
+
+    <!-- 同事选择 -->
+    <view class="colleague-section" wx:if="{{myType}}">
+      <view class="section-label">
+        <text class="label-icon">🤝</text>
+        <text class="label-text">选择同事的牛马类型</text>
+      </view>
+
+      <!-- 搜索框 -->
+      <view class="search-box">
+        <text class="search-icon">🔍</text>
+        <input 
+          class="search-input" 
+          placeholder="输入类型或关键词搜索..." 
+          value="{{searchKeyword}}"
+          bindinput="onSearchInput"
+        />
+      </view>
+
+      <!-- 角色选择网格 -->
+      <view class="colleague-grid">
+        <view 
+          class="colleague-card {{colleagueType === item.id ? 'selected' : ''}}"
+          wx:for="{{filteredCharacters}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="onSelectColleague"
+        >
+          <view class="card-id">{{item.id}}</view>
+          <view class="card-name">{{item.name}}</view>
+          <view class="card-desc">{{item.description}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提示：先选自己 -->
+    <view wx:if="{{!myType}}" class="empty-hint">
+      <text class="hint-emoji">👆</text>
+      <text class="hint-text">请先选择你的牛马类型</text>
+    </view>
+  </view>
+
+  <!-- 显示结果 -->
+  <view wx:elif="{{showResult}}" class="result-container">
+    <view class="result-header">
+      <text class="result-emoji">{{combinationResult.emoji}}</text>
+      <text class="result-name">{{combinationResult.name}}</text>
+      <text class="result-alias">{{combinationResult.alias}}</text>
+    </view>
+
+    <!-- 组合角色展示 -->
+    <view class="combination-card">
+      <view class="combination-characters">
+        <view class="character-mini">
+          <text class="character-id">{{myType}}</text>
+          <text class="character-name">{{myCharacter.name}}</text>
+        </view>
+        <text class="plus-sign">+</text>
+        <view class="character-mini">
+          <text class="character-id">{{colleagueType}}</text>
+          <text class="character-name">{{colleagueCharacter.name}}</text>
+        </view>
+      </view>
+
+      <view class="result-description">
+        <text class="section-title">🧬 组合描述</text>
+        <text class="description-text">{{combinationResult.description}}</text>
+      </view>
+
+      <view class="result-analysis">
+        <view class="analysis-item pros">
+          <text class="analysis-label">💪 优点</text>
+          <text class="analysis-text">{{combinationResult.pros}}</text>
+        </view>
+        <view class="analysis-item cons">
+          <text class="analysis-label">😅 缺点</text>
+          <text class="analysis-text">{{combinationResult.cons}}</text>
+        </view>
+        <view class="analysis-item dynamic">
+          <text class="analysis-label">🔄 职场动态</text>
+          <text class="analysis-text">{{combinationResult.workplaceDynamic}}</text>
+        </view>
+        <view class="analysis-item partner">
+          <text class="analysis-label">🤝 最佳搭档</text>
+          <text class="analysis-text">{{combinationResult.bestPartner}}</text>
+        </view>
+      </view>
+
+      <view class="result-advice">
+        <text class="section-title">💡 友情建议</text>
+        <text class="advice-text">{{combinationResult.advice}}</text>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <button class="share-btn" open-type="share">
+        📤 分享给好友
+      </button>
+      <button class="reset-btn" bindtap="onReset">
+        🔄 重新组合
+      </button>
+      <button class="home-btn" bindtap="onBackHome">
+        🏠 返回首页
+      </button>
+    </view>
+  </view>
+</view>

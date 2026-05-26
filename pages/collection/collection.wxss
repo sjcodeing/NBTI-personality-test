@@ -1,0 +1,98 @@
+.container {
+  padding: 20rpx;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  display: block;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #666;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20rpx;
+  padding: 20rpx;
+}
+
+.card {
+  background: white;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.card.unlocked {
+  opacity: 1;
+}
+
+.card.locked {
+  opacity: 0.6;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+}
+
+.avatar-wrapper {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto 10rpx;
+}
+
+.avatar-placeholder {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-text {
+  font-size: 48rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.level {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 5rpx;
+}
+
+.lock-icon {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 32rpx;
+}

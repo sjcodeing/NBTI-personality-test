@@ -1,0 +1,200 @@
+/* ===== 页面基础 ===== */
+page {
+  background-color: #f5f6fa;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/* ===== 顶部 Header（深色渐变）===== */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d5e 50%, #3d3d7e 100%);
+  padding: 48px 20px 36px;
+  text-align: center;
+}
+
+.header-icon {
+  font-size: 52px;
+  margin-bottom: 12px;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ===== 主体内容区（白色/浅灰背景）===== */
+.body {
+  padding: 16px;
+  margin-top: -20px; /* 向上延伸，与header重叠 */
+}
+
+/* ===== 卡片通用样式 ===== */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card:active {
+  background-color: #f8f9fc;
+}
+
+/* 卡片左侧：图标 + 文字 */
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+/* 卡片文字组 */
+.card-text-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 卡片右侧箭头 */
+.card-arrow {
+  font-size: 28px;
+  color: #ccc;
+  flex-shrink: 0;
+  font-weight: 300;
+}
+
+/* ===== 开始测试卡片（主操作卡片，带强调色）===== */
+.card-primary {
+  border-left: 4px solid #1a1a2e;
+}
+
+.card-primary .card-title {
+  color: #1a1a2e;
+  font-size: 17px;
+}
+
+.card-primary .card-desc {
+  color: #666;
+}
+
+/* ===== 结果等级徽章 ===== */
+.result-badge {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.badge-s {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+}
+
+.badge-a {
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+}
+
+.badge-b {
+  background: linear-gradient(135deg, #9b9b9b, #777);
+}
+
+.badge-c {
+  background: linear-gradient(135deg, #c0c0c0, #999);
+}
+
+/* ===== 空状态卡片 ===== */
+.card-empty {
+  justify-content: flex-start;
+}
+
+.card-empty .card-desc {
+  color: #bbb;
+}
+
+/* ===== 统计数据卡片 ===== */
+.card-stats {
+  display: block;
+  padding: 20px 16px;
+}
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #999;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #eee;
+}
+
+/* ===== 图鉴入口卡片 ===== */
+.card-collection {
+  border-left: 4px solid #ff9800;
+}
+
+.card-collection .card-icon {
+  font-size: 32px;
+}
+
+.card-collection .card-title {
+  color: #ff9800;
+}

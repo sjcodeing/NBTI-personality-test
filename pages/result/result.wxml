@@ -1,0 +1,154 @@
+<view class="container" wx:if="{{result}}">
+  <!-- 结果卡片 -->
+  <view id="resultCard" class="result-card">
+    <!-- 角色头像 -->
+    <view class="avatar-wrapper">
+      <view class="avatar-glow"></view>
+      <image wx:if="{{character.image}}" class="avatar-image" src="{{character.image}}" mode="aspectFill" binderror="onImageError" />
+    </view>
+
+    <!-- 等级徽章 -->
+    <view class="level-badge {{character.level === 'S' ? 'level-s' : character.level === 'A' ? 'level-a' : character.level === 'B' ? 'level-b' : 'level-c'}}">
+      {{character.level}}级
+    </view>
+    
+    <!-- 角色名称 -->
+    <view class="character-name">{{character.name}}</view>
+    <view class="character-alias">{{character.alias}}</view>
+    
+    <!-- 角色描述 -->
+    <view class="character-desc">{{character.description}}</view>
+    
+    <!-- 角色语录 -->
+    <view class="quote-section" wx:if="{{character.quote}}">
+      <text class="quote-text">"{{character.quote}}"</text>
+    </view>
+    
+    <!-- 特质标签 -->
+    <view class="traits-section">
+      <view class="section-title">你的特质</view>
+      <view class="traits-list">
+        <view class="trait-tag" wx:for="{{character.traits}}" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+    
+    <!-- 徽章展示 -->
+    <view class="badges-section">
+      <view class="section-title">获得徽章</view>
+      <view class="badges-list">
+        <view class="badge-item" wx:for="{{character.badges}}" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 维度分析（分享后显示） -->
+  <view class="dimension-section" wx:if="{{showDeepAnalysis}}">
+    <view class="section-title">维度分析</view>
+    
+    <!-- 雷达图 -->
+    <view class="radar-container">
+      <canvas type="2d" id="radarCanvas" class="radar-canvas"></canvas>
+    </view>
+    
+    <!-- 维度详情 -->
+    <view class="dimension-list">
+      <view class="dimension-item" wx:for="{{dimensionScores}}" wx:key="key">
+        <view class="dimension-header">
+          <text class="dimension-left {{item.score < -2 ? 'dominant' : ''}}">{{item.left}}</text>
+          <text class="dimension-name">{{item.name}}</text>
+          <text class="dimension-right {{item.score > 2 ? 'dominant' : ''}}">{{item.right}}</text>
+        </view>
+        <view class="dimension-bar">
+          <view class="dimension-fill" style="width: {{item.leftPercent}}%; background: {{item.score < -2 ? '#1a1a2e' : item.score > 2 ? '#e0e0e0' : '#666'}};"></view>
+        </view>
+        <view class="dimension-values">
+          <text>{{item.leftPercent}}%</text>
+          <text class="dominant-text" wx:if="{{item.score < -2 || item.score > 2}}">{{item.dominant}}</text>
+          <text>{{item.rightPercent}}%</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分享解锁区域 -->
+  <view class="share-lock-section" wx:if="{{!isShared}}">
+    <view class="lock-icon">🔒</view>
+    <view class="lock-title">深度分析已锁定</view>
+    <view class="lock-desc">分享给朋友，解锁完整维度详解、职场建议、性格弱点、最佳搭档、雷区提示</view>
+    <button class="btn-unlock" open-type="share">
+      📤 分享给朋友解锁
+    </button>
+    <view class="lock-hint">分享后自动解锁，可永久查看</view>
+  </view>
+
+  <!-- 深度分析（分享后显示） -->
+  <view class="deep-analysis-section" wx:if="{{showDeepAnalysis && character.dimensionAnalysis}}">
+    <!-- 维度详解 -->
+    <view class="analysis-card">
+      <view class="analysis-title">📊 维度详解</view>
+      <view class="analysis-item" wx:if="{{character.dimensionAnalysis.energy}}">
+        <view class="analysis-label">能量倾向</view>
+        <view class="analysis-text">{{character.dimensionAnalysis.energy}}</view>
+      </view>
+      <view class="analysis-item" wx:if="{{character.dimensionAnalysis.style}}">
+        <view class="analysis-label">做事风格</view>
+        <view class="analysis-text">{{character.dimensionAnalysis.style}}</view>
+      </view>
+      <view class="analysis-item" wx:if="{{character.dimensionAnalysis.attitude}}">
+        <view class="analysis-label">态度倾向</view>
+        <view class="analysis-text">{{character.dimensionAnalysis.attitude}}</view>
+      </view>
+      <view class="analysis-item" wx:if="{{character.dimensionAnalysis.express}}">
+        <view class="analysis-label">表达方式</view>
+        <view class="analysis-text">{{character.dimensionAnalysis.express}}</view>
+      </view>
+    </view>
+
+    <!-- 职场建议 -->
+    <view class="analysis-card" wx:if="{{character.careerAdvice}}">
+      <view class="analysis-title">💼 职场建议</view>
+      <view class="analysis-text">{{character.careerAdvice}}</view>
+    </view>
+
+    <!-- 性格弱点 -->
+    <view class="analysis-card" wx:if="{{character.weakness}}">
+      <view class="analysis-title">⚠️ 性格弱点</view>
+      <view class="analysis-text">{{character.weakness}}</view>
+    </view>
+
+    <!-- 最佳搭档 -->
+    <view class="analysis-card" wx:if="{{character.bestPartner}}">
+      <view class="analysis-title">🤝 最佳搭档</view>
+      <view class="analysis-text">{{character.bestPartner}}</view>
+    </view>
+
+    <!-- 雷区提示 -->
+    <view class="analysis-card danger" wx:if="{{character.dangerZones && character.dangerZones.length > 0}}">
+      <view class="analysis-title">🚫 雷区提示</view>
+      <view class="danger-list">
+        <view class="danger-item" wx:for="{{character.dangerZones}}" wx:key="index">⚡ {{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button class="btn-primary" bindtap="onRetest">重新测试</button>
+    <button class="btn-secondary" open-type="share">分享给朋友</button>
+    <button class="btn-secondary" bindtap="onViewRanking">查看排行榜</button>
+  </view>
+
+  <!-- 免责声明 -->
+  <view class="disclaimer">
+    <text class="disclaimer-text">⚡ 本测试基于MBTI理论框架改编，仅供娱乐参考，不构成任何心理评估或人格诊断。</text>
+  </view>
+
+  <!-- 底部留白 -->
+  <view style="height: 40px;"></view>
+</view>
+
+<!-- 无结果提示 -->
+<view class="no-result" wx:else>
+  <text>暂无测试结果</text>
+  <button class="btn-primary" bindtap="onBackHome">返回首页</button>
+</view>

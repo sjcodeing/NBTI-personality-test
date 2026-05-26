@@ -1,0 +1,141 @@
+.progress-bar {
+  position: relative;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin: 16px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  font-size: 12px;
+  color: #999;
+}
+
+.question-card {
+  background: #fff;
+  border-radius: 16px;
+  margin: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.question-num {
+  font-size: 13px;
+  color: #1a1a2e;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.option-item.selected {
+  background: #1a1a2e;
+  border-color: #1a1a2e;
+}
+
+.option-item.selected .option-key {
+  background: #fff;
+  color: #1a1a2e;
+}
+
+.option-item.selected .option-text {
+  color: #fff;
+}
+
+.option-key {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: #1a1a2e;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.option-text {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+  padding-top: 4px;
+}
+
+.loading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.loading-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #1a1a2e;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.loading-subtext {
+  font-size: 14px;
+  color: #999;
+}
+
+.ad-placeholder {
+  margin: 16px;
+  padding: 40px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.ad-text {
+  font-size: 12px;
+  color: #999;
+}

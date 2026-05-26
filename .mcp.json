@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "codegraph": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "C:/Users/13495/AppData/Roaming/QClaw/npm-global/node_modules/@colbymchenry/codegraph/dist/mcp/index.js"
+      ],
+      "env": {}
+    }
+  }
+}

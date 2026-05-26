@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- Progress Bar -->
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+    <view class="progress-text">{{currentIndex + 1}} / {{totalQuestions}}</view>
+  </view>
+
+  <!-- Question -->
+  <view class="question-card" wx:if="{{currentQuestion && !isComplete}}">
+    <view class="question-num">第 {{currentIndex + 1}} 题</view>
+    <view class="question-text">{{currentQuestion.text}}</view>
+    
+    <view class="options">
+      <view 
+        class="option-item {{answers[String(currentQuestion.id)] === option.key ? 'selected' : ''}}"
+        wx:for="{{currentQuestion.options}}"
+        wx:for-item="option"
+        wx:key="key"
+        data-key="{{option.key}}"
+        data-qid="{{currentQuestion.id}}"
+        bindtap="onSelectOption"
+      >
+        <view class="option-key">{{option.key}}</view>
+        <view class="option-text">{{option.text}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Loading -->
+  <view class="loading-section" wx:if="{{isComplete}}">
+    <view class="loading-icon">🐮</view>
+    <view class="loading-text">正在分析你的职场人格...</view>
+    <view class="loading-subtext">匹配最适合你的牛马类型</view>
+  </view>
+</view>
